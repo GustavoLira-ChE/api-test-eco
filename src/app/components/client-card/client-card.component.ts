@@ -22,6 +22,25 @@ export class ClientCardComponent {
   }
 
   showModal(){
+    let element = document.getElementById(this.client.strID);
+    let body = document.getElementsByTagName("body")[0];
+    if(element != null){
+      if(body != null){
+        element.style.display = "grid";
+        body.style.overflowY = "hidden";
+        window.scrollTo(0, 0);
+      }
+    }
+  }
 
+  hiddenModal(){
+    let element = document.getElementById(this.client.strID);
+    let body = document.getElementsByTagName("body")[0];
+    if(element != null){
+      if(body != null){
+        element.style.display = "none";
+        body.style.overflowY = "inherit";
+      }
+    }
   }
 }

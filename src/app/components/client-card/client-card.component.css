@@ -2,18 +2,56 @@
   padding: 10px;
   border-radius: 5px;
   position: relative;
+  height: 400;
+  border: rgb(201, 201, 201) 1px solid;
 }
 
 .card-status{
   position: absolute;
-  top: 0;
-  right: 0;
-  border: 50%;
-  background-color: brown;
+  top: -15px;
+  right: -15px;
+  border-radius: 50%;
+  height: 30px;
+  width: 80px;
+  text-align: center;
+  padding-top: 10px;
   color: white;
 }
 
 .card:hover{
   border: black 1px solid;
+  padding: 10px;
   background-color: rgb(233, 233, 233);
+}
+
+.card-modal{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  height: 100vh;
+  overflow-y: hidden;
+  background-color: gray;
+  z-index: 20;
+  opacity: 0.9;
+  place-content: center;
+}
+
+.card-modal-center{
+  background-color: white;
+  color: black;
+  padding: 20px;
+}
+
+.card-modal-center-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+table{
+  text-align: left;
 }

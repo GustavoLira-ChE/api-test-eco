@@ -1,13 +1,67 @@
 <div class="card">
   <div class="card-body">
     <div class="card-principal-info">
-      <h4>{{client.strNombre}}</h4>
-      <div class="card-status">{{client.strEstatus}}</div>
+      <h4>{{ client.strNombre }}</h4>
+      <div
+        class="card-status"
+        [style.background-color]="
+          client.strEstatus == 'Autorizado' ? 'green' : 'red'
+        "
+      >
+        {{ client.strEstatus }}
+      </div>
     </div>
-    <br>
+    <br />
     <div class="card-secondary-info">
-      <h5>{{client.strContacto}}</h5>
-      <p>{{client.strEmail}}</p>
+      <h5>Nombre contacto: {{ client.strContacto }}</h5>
+      <p>Email: {{ client.strEmail.toLowerCase() }}</p>
     </div>
+  </div>
+  <br />
+  <div class="">
+    <button (click)="showModal()">Más informacion</button>
+  </div>
+</div>
+
+<div class="card-modal" id="{{ client.strID }}">
+  <div class="card-modal-center">
+    <div class="card-modal-center-header">
+      <h4>{{ client.strNombre }}</h4>
+      <button (click)="hiddenModal()">X</button>
+    </div>
+    <table>
+      <tr>
+        <th>Nombre</th>
+        <th>{{ client.strNombre }}</th>
+      </tr>
+      <tr>
+        <th>ID</th>
+        <td>{{ client.strID }}</td>
+      </tr>
+      <tr>
+        <th>Status</th>
+        <td>{{ client.strEstatus }}</td>
+      </tr>
+      <tr>
+        <th>Tipo</th>
+        <td>{{ client.strTipo }}</td>
+      </tr>
+      <tr>
+        <th>Contacto</th>
+        <td>{{ client.strContacto }}</td>
+      </tr>
+      <tr>
+        <th>Nombre de usuario</th>
+        <td>{{ client.strUsuarioNombre }}</td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td>{{ client.strEmail }}</td>
+      </tr>
+      <tr>
+        <th>Dias</th>
+        <td>{{ client.intDias }}</td>
+      </tr>
+    </table>
   </div>
 </div>
