@@ -1,11 +1,8 @@
 <header>
-  <h1>Ecodeli Test</h1>
-  <form action="">
-    <input type="text" name="" class="input-text" placeholder="Buscar">
-    <input class="input-button" type="submit" value="buscar">
-  </form>
+  <h1>{{title}}</h1>
+  <input type="text"  class="input-text" placeholder="Buscar" [(ngModel)]="wordFilter">
 </header>
 <div class="body">
   <aside></aside>
-  <app-client-card-container></app-client-card-container>
+  <app-client-card-container [wordFilter]="wordFilter"></app-client-card-container>
 </div>
