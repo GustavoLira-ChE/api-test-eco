@@ -26,7 +26,8 @@ export class FetchInformationService {
     private http: HttpClient
   ) { }
 
-  fetchInformation() {
-    return this.http.post<Client[]>(this.infoUrl,this.connection);
+  fetchInformation(filter: string) {
+    return this.http.post<Client[]>(this.infoUrl,this.connection).pipe(map(i => i.filter(i => i.strEstatus.toLowerCase().startsWith(filter.toLowerCase()) || i.strNombre.toLowerCase().startsWith(filter.toLowerCase()) || i.strEmail.toLowerCase().startsWith(filter.toLowerCase()) )));
+
   }
 }
